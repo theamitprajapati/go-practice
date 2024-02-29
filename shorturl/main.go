@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"sync"
 
@@ -25,6 +26,6 @@ func main() {
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello server"))
 	})
-
+	fmt.Println("Server running...")
 	http.ListenAndServe(":3000", r)
 }
